@@ -1,0 +1,109 @@
+.bashrc :- .bashrc is a scripted file that executes when logs in.
+Know_host_file :-It is a file that contains public keys of the host accesed by the user.
+shared library :- It is a collection of groovy scripts that shared between different jenkins jobs.
+Number of executors in jenkins :- Number of concurrent jobs that can run.If we want to run multiple jobs simultaneously at a time then we need more  number of executors.
+what is label :- when we creating new slave node,jenkins allows us to tag a slave node with label.Label is the way of naming one or more slaves.
+what is x-args :- X-args is a unix command used to build and executes commands from standard inputs.When we need to take output from one command and used it as arguement to another command ,
+                   then we use x-args
+
+Git:
+what is git revert :- It is the command that create new commits that undoes the changes from previous commit.
+                      git revert <commit_id>
+what is git reset :- It is the command use to  vanish a commit completely from local repo and remote repo.
+what is git :- Git is source code management tool or version control tool that is used to track the changes,maintainance and control the changes from source code.
+Difference between git and github :- While Git is a tool that's used to manage multiple versions of source code edits that are then transferred to files in a Git repository, 
+                                      GitHub serves as a location for uploading copies of a Git repository. 
+
+jenkins:
+what is jenkins :- It is open source automation server,hat is used to automate all sorts of tasks related to build,testing and deploying softwares.
+what is jenkins file :- It is a file that contains all job configurations in groovy.
+Groovy means It is the java based scripting language used by jenkins pipeline.
+How do you define environment variables in jenkins pipeline : Environment directives specifies sequence of key-value pair which will be defined as 
+                  environment variables for all the steps or stage-specific-steps depending on where environment directive is located within pipeline.
+                we use 
+                  environment {
+                     variable_name=value
+                }
+                The value of these user-defined environments are made available to pipeline steps by using env object.
+How do you define parameters in jenkins pipeline : The parameters directives gives list of parameters that the user should provided when triggering the pipeline.
+                  The values for these user-specified parameters are made available to Pipeline steps via the params object
+                  pipeline {
+                      agent any 
+                      parameters {
+                                string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                            
+                                text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+                            
+                                booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+                            
+                                choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+                            
+                                password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+                           }
+                       stages {
+                            stage('Example') {
+                                steps {
+                                    echo "Hello ${params.PERSON}"
+                    
+                                    echo "Biography: ${params.BIOGRAPHY}"
+                    
+                                    echo "Toggle: ${params.TOGGLE}"
+                    
+                                    echo "Choice: ${params.CHOICE}"
+                    
+                                    echo "Password: ${params.PASSWORD}"
+                                }
+                            }
+                        }
+                      
+                  }
+
+How do you define triggers in jenkins pipeline : The triggers directive defines the automated ways in which the Pipeline should be re-triggered.
+
+    cron
+        Accepts a cron-style string to define a regular interval at which the Pipeline should be re-triggered, 
+        for example: triggers { cron('H */4 * * 1-5') }
+        pipeline {
+                  agent any
+                  triggers {
+                      cron('H */4 * * 1-5')
+                  }
+                  stages {
+                      stage('Example') {
+                          steps {
+                              echo 'Hello World'
+                          }
+                      }
+                  }
+              }
+
+pollSCM
+        Accepts a cron-style string to define a regular interval at which Jenkins should check for new source changes. 
+        If new changes exist, the Pipeline will be re-triggered. 
+        For example: triggers { pollSCM('H */4 * * 1-5') }
+
+How do you define tools in jenkins pipeline : A section defining tools to auto-install and put on the PATH. This is ignored if agent none is specified.
+                pipeline {
+                    agent any
+                    tools {
+                        maven 'apache-maven-3.0.1' 
+                    }
+                    stages {
+                        stage('Example') {
+                            steps {
+                                sh 'mvn --version'
+                            }
+                        }
+                    }
+                }
+
+
+Maven:
+what is maven :-Maven is open source build tool developed to build ,publish and deploy several projects at once for better project management.
+what is pom.xml :- POM means Project Object Model.
+                    It is a file that contains information about the project and configuration details for maven to build the project.
+
+Tomcat:
+What is tomcat : It is an open-source Java servlet container that implements many Java Enterprise Specs such as the Websites API, Java-Server Pages and last but not least, the Java Servlet.
+
+  
