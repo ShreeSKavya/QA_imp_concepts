@@ -96,7 +96,26 @@ How do you define tools in jenkins pipeline : A section defining tools to auto-i
                         }
                     }
                 }
-
+Agent
+	- An agent is a declarative used to define the execution method for pipeline stages.
+	- agent is the one which tell stages to execute on which node and its executor.
+	- Agent can be specified at two levels 
+				a. pipeline level 
+				b. Stage level
+			
+	Types of agent 
+		any 
+			- This is the default agent, If I wont specify any agent this will be considered.
+			- Execute the Pipeline, or stage, on any available agent. For example: agent any
+			
+		none 
+			-  When applied at the top-level of the pipeline block no global agent will be allocated for the entire Pipeline run and 
+            each stage section will need to contain its own agent section. 
+        For example: agent none
+				
+		label 
+			- we can define agent as label at pipeline to run all the stages of pipeline
+			  on a perticular node with label.	
 
 Maven:
 what is maven :-Maven is open source build tool developed to build ,publish and deploy several projects at once for better project management.
