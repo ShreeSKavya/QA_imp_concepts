@@ -113,7 +113,7 @@ Agent
 			- Execute the Pipeline, or stage, on any available agent. For example: agent any
 			
 		none 
-			-  When applied at the top-level of the pipeline block no global agent will be allocated for the entire Pipeline run and 
+			-  When applied at the top-level of the pipeline block,there is no global agent will be allocated for the entire Pipeline run and 
             			each stage section will need to contain its own agent section. 
         			For example: agent none
 				
