@@ -9,7 +9,7 @@ what is x-args :- X-args is a unix command used to build and executes commands f
 Git:
 what is git revert :- It is the command that create new commits that undoes the changes from previous commit.
                       git revert <commit_id>
-what is git reset :- It is the command use to  vanish a commit completely from local repo and remote repo.
+what is git reset :- It is the command use to  vanish a commit completely from local repo and remote repo. git reset --hard <commit_id>
 what is git :- Git is source code management tool or version control tool that is used to track the changes,maintainance and control the changes from source code.
 Difference between git and github :- While Git is a tool that's used to manage multiple versions of source code edits that are then transferred to files in a Git repository, 
                                       GitHub serves as a location for uploading copies of a Git repository. 
