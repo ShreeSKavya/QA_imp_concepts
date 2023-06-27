@@ -1,4 +1,4 @@
-.bashrc :- .bashrc is a scripted file that executes when logs in.
+.bashrc :- .bashrc is a scripted file that executes when user logs in.
 Know_host_file :-It is a file that contains public keys of the host accesed by the user.
 shared library :- It is a collection of groovy scripts that shared between different jenkins jobs.
 Number of executors in jenkins :- Number of concurrent jobs that can run.If we want to run multiple jobs simultaneously at a time then we need more  number of executors.
