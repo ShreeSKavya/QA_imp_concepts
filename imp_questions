@@ -82,7 +82,9 @@ How do you define triggers in jenkins pipeline : The triggers directive defines 
 pollSCM
         Accepts a cron-style string to define a regular interval at which Jenkins should check for new source changes. 
         If new changes exist, the Pipeline will be re-triggered. 
-        For example: triggers { pollSCM('H */4 * * 1-5') }
+        For example: triggers { 
+			pollSCM('H */4 * * 1-5') 
+			}
 
 How do you define tools in jenkins pipeline : A section defining tools to auto-install and put on the PATH. This is ignored if agent none is specified.
                 pipeline {
