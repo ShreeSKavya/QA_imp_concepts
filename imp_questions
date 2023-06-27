@@ -114,8 +114,8 @@ Agent
 			
 		none 
 			-  When applied at the top-level of the pipeline block no global agent will be allocated for the entire Pipeline run and 
-            each stage section will need to contain its own agent section. 
-        For example: agent none
+            			each stage section will need to contain its own agent section. 
+        			For example: agent none
 				
 		label 
 			- we can define agent as label at pipeline to run all the stages of pipeline
