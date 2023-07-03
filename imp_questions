@@ -129,4 +129,12 @@ what is pom.xml :- POM means Project Object Model.
 Tomcat:
 What is tomcat : It is an open-source Java servlet container that implements many Java Enterprise Specs such as the Websites API, Java-Server Pages and last but not least, the Java Servlet.
 
+AWS:
+Explain Amazon EBS and its types :
+	Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. 
+		EBS volumes behave like raw, unformatted block devices.
+		EBS volumes are persistent. They can live beyond the life of the ec2 instance that they are attached to. They can be attached/detached to and from different ec2 instances.
+		An EBS volume can only be attached to 1 ec2 instance at a time (Multi Attach EBS Volume can be attached to multiple instances). They are mounted to the file system.
+		You can backup the EBS volume into a snapshot, which can later be used/restored into a new EBS volume.
+
   
