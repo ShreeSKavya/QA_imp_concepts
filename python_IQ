@@ -31,6 +31,7 @@ difference b/w Lists and Sets
                 d.Lists are ordered collection of                          d.Sets are unordered collection of elements.
                   elements.
                 e.It may contains duplicate elements                        e.It  contains unique elements
+                f.It contains Heterogenous data structure                   f.It contains Homogenous data structure
 
 difference b/w Lists and Dictionary 
 
@@ -60,6 +61,7 @@ difference b/w Tuple and sets
                   elements.
                 e.It may contains duplicate elements                        e.It  contains unique elements
                 f.Access elements by index                                  f.No indexing
+                g.It contains Heterogenous data structure                   g.It contains Homogenous data structure
 
 
 difference b/w Tuple and Dictionary
@@ -95,6 +97,8 @@ difference b/w Sets and Dictionary
 
                 f.No indexing                                               f.Dictionary items can be accessed by using key values. 
                                                                                 Key values can be of any data type.
+                g.It contains Homogenous data structure                     g.It contains Heterogenous data structure
+
 
 
 
