@@ -1,8 +1,102 @@
 List:  It is ordered collection of data and that can be of multiple data types like integer,string etc
        It is mutable.you can change the elements by adding or removing or modifying the data.
        Lists are used to store multiple values in a single variable.
-      list_1 = ["Kavya","Jeevan","Bhavya"]
+     EX:- list_1 = ["Kavya","Jeevan","Bhavya"]
    a. For adding         ==>                 list_1.append("Ashika")  ==> It will add the element at the last position  ==> list_1 = ["Kavya","Jeevan","Bhavya","Ashika"]
    b. For adding at perticular position ==>  list_1.insert(2,"megha") ==> list_1 = ["Kavya","Jeevan","megha","Bhavya","Ashika"]
    c.For deleting               ==>          list_1.pop()            ==> It will remove the element at the last position  ==> list_1 = ["Kavya","Jeevan","megha","Bhavya"]
    d.For adding at perticular position ==>   list_1.pop(2) ==> list_1 = ["Kavya","Jeevan","Bhavya"]
+             or
+   e.For adding at perticular position ==> list_1.remove("Jeevan")  ==> list_1 = ["Kavya","Bhavya"]
+
+
+Tuple : A tuple is an ordered, immutable collection of elements enclosed in parentheses ( ). 
+        Once a tuple is created, its elements cannot be changed, added, or removed, making it an immutable data type.
+
+difference b/w Lists and Tuple 
+                          Lists                                                    Tuple
+                a.we use square braces[]                                   a.enclosed in parentheses ( ).
+                b.we can replace the elements                              b.we can"t replace the elements.
+                                                                             If we want to replace one element with other,then 1 st convert it into string
+                c.Lists are mutable                                        c.Tuples are immutable. 
+                d.Lists are ordered collection of                          d.Tuples are ordered collection of elements.
+                  elements
+
+difference b/w Lists and Sets
+                          Lists                                                    Sets
+                a.we use square braces[]                                   a.enclosed in  {} or set().
+                b.we can replace the elements                              b.Items in set cannot be changed or replaced.
+                                                                             If we want to replace one element with other,then 1 st convert it into string
+                c.Lists are mutable                                        c.Sets are mutable. 
+                d.Lists are ordered collection of                          d.Sets are unordered collection of elements.
+                  elements.
+                e.It may contains duplicate elements                        e.It  contains unique elements
+
+difference b/w Lists and Dictionary 
+
+                            Lists                                                    Dictionary
+                a.List is initialized with [],                             a.Dictionary is created by placing elements in {}, data is added as key-value pair,                      
+                 and elements are separated by ','.                           and each pair is separated by ','.  
+                b.we can replace the elements                              b.Items in dictionary cannot be changed or replaced.
+                                                                             If we want to replace one element with other,then 1 st convert it into string
+                c.Lists are mutable                                        c.Dictionary are mutable. 
+                d.Lists are ordered collection of                          d.Dictionary are unordered collection of elements.
+                  elements.
+                e.Lists allows duplicate values.                           e.dictionary doesn't allow duplicate values with the same key in it.
+                f.Lists are used to store the data,                        f.It stores large amounts of data for easy and quick access.
+                 which should be ordered and sequential.
+                g.List values can be accessed by numeric indexes.          g.Dictionary items can be accessed by using key values. 
+                                                                              Key values can be of any data type.
+
+
+difference b/w Tuple and sets
+                   
+                       Tuples                                                    Sets
+                a.enclosed in parentheses ( ).                              a.enclosed in  {} or set().
+                b.we can't replace the elements                             b.Items in set cannot be changed or replaced.
+                                                                             If we want to replace one element with other,then 1 st convert it into string
+                c.Tuples are immutable                                      c.Sets are mutable. 
+                d.Tuples are ordered collection of                          d.Sets are unordered collection of elements.
+                  elements.
+                e.It may contains duplicate elements                        e.It  contains unique elements
+                f.Access elements by index                                  f.No indexing
+
+
+difference b/w Tuple and Dictionary
+                   
+                       Tuples                                                    Dictionary
+                a.A tuple is a non-homogeneous data structure               a.Dictionary is a non-homogeneous data structure that contains key-value pairs.
+                   that can hold a single row as well as 
+                     several rows and columns.  
+
+                b.Tuples are represented by parentheses ().                 b.Dictionaries are represented by curly brackets {}..
+                            
+                c.Tuples are immutable i.e, we can not make changes.        c.Dictionaries are mutable .
+                d.Tuple can be created using tuple() function.	             d.Dictionary can be created using the dict() function.
+
+                e.It may contains duplicate elements                        e.dictionary doesn't allow duplicate values with the same key in it.
+
+                f.Access elements by index                                  f.Dictionary items can be accessed by using key values. 
+                                                                               Key values can be of any data type.
+
+
+difference b/w Sets and Dictionary
+
+                                 Sets                                                    Dictionary
+                a.We can create a set using the set() function.             a.We can create a dictionary using the dict() function. 
+
+                b.Sets are enclosed by  {} or set().                        b.Dictionaries are represented by curly brackets {} ot dict()..
+                            
+                c.It can be utilized in a Set.                              c.It can be utilized in a Dictionary.
+                d.It is unordered in nature.                                d.It is ordered in nature.
+
+                e.It contains unique elements                              e.dictionary doesn't allow duplicate values with the same key in it.
+
+                f.No indexing                                               f.Dictionary items can be accessed by using key values. 
+                                                                                Key values can be of any data type.
+
+
+
+
+
+
