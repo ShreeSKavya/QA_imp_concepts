@@ -78,6 +78,7 @@ difference b/w Tuple and Dictionary
 
                 f.Access elements by index                                  f.Dictionary items can be accessed by using key values. 
                                                                                Key values can be of any data type.
+                g.It is ordered in nature.                                  g.It is unordered in nature.
 
 
 difference b/w Sets and Dictionary
@@ -88,7 +89,7 @@ difference b/w Sets and Dictionary
                 b.Sets are enclosed by  {} or set().                        b.Dictionaries are represented by curly brackets {} ot dict()..
                             
                 c.It can be utilized in a Set.                              c.It can be utilized in a Dictionary.
-                d.It is unordered in nature.                                d.It is ordered in nature.
+                d.It is unordered in nature.                                d.It is unordered in nature.
 
                 e.It contains unique elements                              e.dictionary doesn't allow duplicate values with the same key in it.
 
