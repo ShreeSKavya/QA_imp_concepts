@@ -1,0 +1,8 @@
+List:  It is ordered collection of data and that can be of multiple data types like integer,string etc
+       It is mutable.you can change the elements by adding or removing or modifying the data.
+       Lists are used to store multiple values in a single variable.
+      list_1 = ["Kavya","Jeevan","Bhavya"]
+   a. For adding         ==>                 list_1.append("Ashika")  ==> It will add the element at the last position  ==> list_1 = ["Kavya","Jeevan","Bhavya","Ashika"]
+   b. For adding at perticular position ==>  list_1.insert(2,"megha") ==> list_1 = ["Kavya","Jeevan","megha","Bhavya","Ashika"]
+   c.For deleting               ==>          list_1.pop()            ==> It will remove the element at the last position  ==> list_1 = ["Kavya","Jeevan","megha","Bhavya"]
+   d.For adding at perticular position ==>   list_1.pop(2) ==> list_1 = ["Kavya","Jeevan","Bhavya"]
