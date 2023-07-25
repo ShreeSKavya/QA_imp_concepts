@@ -41,7 +41,7 @@ difference b/w Lists and Dictionary
                 b.we can replace the elements                              b.Items in dictionary cannot be changed or replaced.
                                                                              If we want to replace one element with other,then 1 st convert it into string
                 c.Lists are mutable                                        c.Dictionary are mutable. 
-                d.Lists are ordered collection of                          d.Dictionary are unordered collection of elements.
+                d.Lists are ordered collection of                          d.Dictionary are ordered collection of elements.
                   elements.
                 e.Lists allows duplicate values.                           e.dictionary doesn't allow duplicate values with the same key in it.
                 f.Lists are used to store the data,                        f.It stores large amounts of data for easy and quick access.
@@ -80,7 +80,7 @@ difference b/w Tuple and Dictionary
 
                 f.Access elements by index                                  f.Dictionary items can be accessed by using key values. 
                                                                                Key values can be of any data type.
-                g.It is ordered in nature.                                  g.It is unordered in nature.
+                g.It is ordered in nature.                                  g.It is ordered in nature.
 
 
 difference b/w Sets and Dictionary
@@ -91,7 +91,7 @@ difference b/w Sets and Dictionary
                 b.Sets are enclosed by  {} or set().                        b.Dictionaries are represented by curly brackets {} ot dict()..
                             
                 c.It can be utilized in a Set.                              c.It can be utilized in a Dictionary.
-                d.It is unordered in nature.                                d.It is unordered in nature.
+                d.It is unordered in nature.                                d.It is ordered in nature.
 
                 e.It contains unique elements                              e.dictionary doesn't allow duplicate values with the same key in it.
 
