@@ -155,6 +155,44 @@ Q: What are plugins in Jenkins.why we use it ?
 A: Plugins are the primary means of enhancing the functionality of a Jenkins environment to suit organization- or user-specific needs. 
     There are over a thousand different plugins which can be installed on a Jenkins controller and to integrate various build tools, cloud providers, analysis tools, and much more.
 
+Q: Can you explain Master-slave concept in Jenkins ? or jenkins architecture ?
+
+A: This single Jenkins server was not enough to meet certain requirements like:
+
+     a.Sometimes you might need several different environments to test your builds. This cannot be done by a single Jenkins server.
+     b.If larger and heavier projects get built on a regular basis then a single Jenkins server cannot simply handle the entire load.
+     
+     To address the above-stated needs, Jenkins distributed architecture came into the picture.
+
+  Jenkins Distributed Architecture:
+          Jenkins uses a Master-Slave architecture to manage distributed builds. In this architecture, Master and Slave communicate through TCP/IP protocol.
+
+  Jenkins Master:
+
+     Your main Jenkins server is the Master. The Master’s job is to handle:
+
+          a.Scheduling build jobs.
+          b.Dispatching builds to the slaves for the actual execution.
+          c.Monitor the slaves (possibly taking them online and offline as required).
+          d.Recording and presenting the build results.
+          e.A Master instance of Jenkins can also execute build jobs directly.
+
+ Jenkins Slave:
+     A Slave is a Java executable that runs on a remote machine. Following are the characteristics of Jenkins Slaves:
+
+          a.It hears requests from the Jenkins Master instance.
+          b.Slaves can run on a variety of operating systems.
+          c.The job of a Slave is to do as they are told to, which involves executing build jobs dispatched by the Master.
+          d.You can configure a project to always run on a particular Slave machine or a particular type of Slave machine, or simply let Jenkins pick the next available Slave.
+          
+
+Q:How Jenkins Master and Slave Architecture works?
+
+A:
+     *Jenkins checks the Git repository at periodic intervals for any changes made in the source code.
+     *Each builds requires a different testing environment which is not possible for a single Jenkins server. In order to perform testing in different environments, Jenkins uses various Slaves.
+     *Jenkins Master requests these Slaves to perform testing and to generate test reports.
+
 
 
 
