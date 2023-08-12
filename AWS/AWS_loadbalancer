@@ -1,0 +1,43 @@
+Q: what is Load-balancer in aws? why we use it?
+
+A: Load balancer is a service which uniformly distributes network traffic and workloads across multiple servers or cluster of servers.Load balancer in AWS increases the availability and fault tolerance of an application.
+    *Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. 
+    * It monitors the health of its registered targets, and routes traffic only to the healthy targets. 
+    * Elastic Load Balancing scales your load balancer as your incoming traffic changes over time.
+    * To make an AWS ELB accept incoming traffic you have to configure them by specifying one or more listeners. A listener is a process which will check for connection requests.
+
+Q: what are the types of Load-balancer in aws? 
+
+A: we have Three types of load balancers 
+  a.Application Load balancer(ALB)
+  b.Network Load balancer(NLB)
+  c.Gateway Load balancer(GWLB)
+
+Application Load balancer(ALB): 
+    * An Application Load Balancer in AWS makes routing decisions at the application layer (HTTP/HTTPs) of the OSI model.
+    * If you want to perform load balancing on Layer 7(application layer),or If you want to perform load balancing at HTTP layer,Then go for ALB
+    * This layer is slightly costly and it has some additional capabilities.It is slightly slower also
+    * ALB supports path-based and host-based routing,
+
+ Network Load balancer(NLB): A Network Load Balancer makes routing decisions at the transport layer of the OSI model .It performs routing on (TCP/UDP) packets,not on HTTP packets.  
+      * If you want to perform load balancing on Layer 4(transport layer),Then go for NLB
+      * It can handle millions of requests per second
+      * NLB is less costly and has low latency.High trasmission of data takes place in NLB.
+      * It is used for Game servers,youtube,streaming platform.
+      * NLB creates sticky sessions(All packets go for one single server)
+
+ Gateway Load balancer(GWLB): It deals with VA(Virtual Apliances) like VPN kind of application,Firewall kind of application.
+          * It offers High security compare to ALB and NLB
+          * It sends highly encrypted packets to the VA.
+
+
+The request goes to server from client side through 7 layers.and get the response from the server.
+OSI model consists of 7 layers
+1.Application Layer(Layer 7) : It is the one which is layer 7 in which what kind of protocol you used to access the server.
+2.Presentation Layer(Layer 6): In this layer TLS based requests send to the server.
+3.Session Layer(Layer 5): This layer handles with session objects.
+4.Transport Layer(Layer 4): This is key layer,In this layer request splits into multiple packets or small chunks.
+      * This layer makes sure that the request comes from client to server in a secure way and in small packets.
+5.Network Layer(Layer 3): Small packets wants to travel from client to server through multiple routes.
+6.Data link(Layer 2): 
+7.Physical layer(Layer 1): In this layer all the cabels connected to the server.
