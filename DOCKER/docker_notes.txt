@@ -1,0 +1,430 @@
+Docker:
+    Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+      
+Dockerfile:
+    Dockerfile is a text document containing all the commands the user requires to call on the command line to assemble an image. 
+
+Docker Image:
+    A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template.
+
+Docker container:
+    A container is an isolated environment for your code. containers have everything that the software needs to run including libraries, system tools, code, and runtime.
+
+Docker network:
+    Docker networking enables a user to link a Docker container to as many networks as he/she requires. Docker networking is primarily used to establish communication between Docker containers and the outside world via the host machine where the Docker daemon is running.
+    The Docker network is a virtual network created by Docker to enable communication between Docker containers. If two containers are running on the same host they can communicate with each other without the need for ports to be exposed to the host machine.
+
+Types of Network Drivers
+    - bridge: If you build a container without specifying the kind of driver, the container will only be created in the bridge network, which is the default network. 
+    - host: Containers will not have any IP address they will be directly created in the system network which will remove isolation between the docker host and containers. 
+    - none: IP addresses won’t be assigned to containers. These containments are not accessible to us from the outside or from any other container.
+
+Docker volume:
+    A Docker volume is an independent file system entirely managed by Docker and exists as a normal file or directory on the host, where data is persisted. 
+
+States of container / Lifecycle of container:
+    1. Created - if a container is newly created and the container is not yet started.
+    2. Running - A currently running container. It means there is no problem 
+                 with the container to run the process.
+    3. Exited - A container ran and completed execution with failure.
+    4. paused - A container whose process has been paused. (we can unpause the container)
+    5. Dead - if the docker daemon tried and failed to stop a container (host ram full)
+    6. Restarting - the container will be in the phase of restarting the main process.
+
+Docker Architecture:
+Docker Daemon 
+    - A background process that manages docker images, containers, network, and volumes.
+    - This Daemon constantly listens for docker API requests and processes them.
+    
+Docker REST API 
+    - API which is used by applications to interact with the docker daemon. 
+        
+Docker CLI 
+    - It is a command line interface for interacting with the docker daemon through REST API.
+    
+Docker Objects 
+    - Images, Containers, Networks, Volumes
+
+Benefits of Docker:
+    Flexible: Complex applications can be divided and containerized into small components called microservices
+
+    Lightweight: Containers share the machine’s OS system kernel and therefore do not require an OS per application, driving higher server efficiencies and reducing server and licensing costs
+
+    portable:  we can build images anywhere and then deploy them to the cloud, and run them anywhere.    
+
+    Isolation: Docker containers offer a portable, isolated environment for software to execute in, making sure that each container runs without interfering with the operations of other containers or the host system.
+
+    Resource Efficiency: When compared to running separate virtual machines (VMs), containers share the host system's kernel, which lowers overhead. This increases the resource efficiency of Docker and allows for a higher application density on a single host.
+
+    DevOps Integration: Docker supports seamless integration of development and operations (DevOps) workflows. Developers can use the same environment throughout the development and deployment lifecycle, leading to smoother collaboration.
+
+    Continuous Integration and Continuous Deployment (CI/CD): By providing dependable and consistent builds, testing, and deployments, Docker streamlines CI/CD pipelines. Containers are simple to include in CI/CD workflows, resulting in quicker feedback and delivery cycles.
+
+DOCKER COMMANDS
+------Docker – Instruction Commands-------
+- Docker Run
+    This command is used to run a container from an image. The docker run command is a combination of the docker create and docker start commands. It creates a new container from the image specified and starts that container. if the docker image is not present, then the docker run pulls that.
+
+    $ docker run <image_name>
+    To give name of container
+    $ docker run --name <container_name> <image_name>
+
+- Docker Pull
+    This command allows you to pull any image which is present in the official registry of docker, Docker hub. By default, it pulls the latest image, but you can also mention the version of the image.
+
+    $ docker pull <image_name>
+    For particular version
+    $ docker pull <image_name>:version
+
+- Docker PS
+    This command (by default) shows us a list of all the running containers. We can use various flags with it.
+
+    -a flag:  shows us all the containers, stopped or running.
+    -l flag: shows us the latest container.
+    -q flag: shows only the Id of the containers. 
+    $ docker ps [options..]
+
+- Docker Stop
+    This command allows you to stop a container if it has crashed or you want to switch to another one.
+
+    $ docker stop <container_ID>
+
+- Docker Start
+    Suppose you want to start the stopped container again, you can do it with the help of this command.
+
+    $ docker start <container_ID>
+
+- Docker rm
+    To delete a container. By default when a container is created, it gets an ID as well as an imaginary name such as confident_boyd, heuristic_villani, etc. You can either mention the container name or its ID.
+
+    Some important flags:
+
+    -f flag: remove the container forcefully.
+    -v flag: remove the volumes.
+    -l flag: remove the specific link mentioned.
+     $ docker rm {options} <container_name or ID>
+
+- Docker RMI
+    To delete the image in docker. You can delete the images which are useless from the docker local storage so you can free up the space
+
+    docker rmi <image ID/ image name>
+
+- Docker Images
+    Lists all the pulled images which are present in our system.
+
+    $ docker images
+
+- Docker exec
+    This command allows us to run new commands in a running container. This command only works until the container is running, after the container restarts, this command does not restart.
+
+    Some important flags:
+
+    -d flag: for running the commands in the background.
+    -i flag: it will keep STDIN open even when not attached.
+    -e flag: sets the environment variables 
+     $ docker exec {options}
+
+- Docker Ports (Port Mapping)
+    In order to access the docker container from the outside world, we have to map the port on our host( Our laptop for example), to the port on the container. This is where port mapping comes into play.
+
+    $ docker run -d -p <port_on_host>:<port_on_container> Container_name
+
+- Docker Push
+    docker push <Image name/Image ID> 
+
+- Docker Build
+    The docker build command is used to build the docker images with the help of Dockerfile.
+
+    docker build -t image_name:tag .
+    In the place of image_name use the name of the image you build with and give the tag number and . “dot” represents the current directory.
+
+- Docker Stop
+    You can stop and start the docker containers where you can do the maintenance for containers. To stop and start specific containers you can use the following commands.
+
+    docker stop container_name_or_id
+
+- Stop Multiple Containers
+    Instead of stopping a single container. You can stop multiple containers at a time by using the following commands.
+
+    docker stop container1 container2 container3
+
+- Docker Restart
+    While running the containers in Docker you may face some errors and containers fails to start. You can restart the containers to resolve the containers by using the following commands.
+
+    docker restart container_name_or_id
+
+- Docker Inspection
+    Docker containers will run into some errors in real time to debug the container’s errors you can use the following commands.
+
+    docker inspect container_name_or_id
+
+- Docker Commit commands
+    After running the containers by using the current image you can make the updates to the containers by interacting with the containers from that containers you can create an image by using the following commands.
+
+    docker commit container_name_or_id new_image_name:tag
+
+-----Running Commands----
+
+- Method 1: Using Bash
+    You can directly access the bash of the Docker Container and execute commands there. It’s very easy to launch the bash of the Container and you can do so using this command.
+
+    sudo docker run -it ubuntu bash
+    The above command runs an Ubuntu Container and fires up its bash.
+
+- Method 2: Using the Docker exec Command
+    In order to run a command inside a Docker Container using the exec command, you have to know the Container Id of the Docker Container. You can get the Container Id using the following Command.
+
+    sudo docker container ls
+            or 
+    sudo docker ps -a
+
+    Once you have the Container ID, you can use the Docker exec command. But you have to confirm that the Container is running before you can execute the exec command. To start the Container, use this command.
+
+    sudo docker start d64b00529582
+    After that, execute the exec command.
+
+    sudo docker exec -it d64b00529582 echo "GeeksforGeeks"
+
+- Method 3: By using the Dockerfile
+    When you are creating a large application, it is always advised that you execute your commands by specifying it inside the Dockerfile. However, you should only include those commands inside the Dockerfile which you want to execute while building the Container. For executing commands on the go, you can use any of the two methods above. To execute commands through Dockerfile, you can specify them using the Docker Run Commands.
+
+    FROM ubuntu:latest
+    RUN echo "geeksforgeeks"
+    After you have created the above Dockerfile, you can build the images using the Docker build command.
+
+    sudo docker build -t sample-image .
+
+------Docker – USER Instruction------
+
+- Step 1: Create the Dockerfile
+    FROM ubuntu:latest
+    RUN apt-get -y update
+    RUN groupadd -r user && useradd -r -g user user
+    USER user
+
+- Step 2: Build the Docker Image
+    After creating the Dockerfile, we can now create the Docker Image using the Build command.
+
+    sudo docker build -t user-demo .
+
+- Step 3: Run the Docker Container
+    Use the Docker Run command to run the Container.
+
+    sudo docker run -it user-demo bash
+
+-Docker custom image / Dockerfile / Docker instructions 
+
+        Dockerfile is used to create custom images by using any stock image or other image as a base image.
+        In Dockerfile we can write some set of instructions to update any image.
+    
+        To create an image from Dockerfile
+            docker build -t <image_name>:<tag> .
+
+        To create an image from a specific Dockerfile a 
+            docker build -t <image_name>:<tag> -f /path/to/Dockerfile .  
+
+        -t 	Image name with tag which will be created from this Dockerfile
+          .	The period (.) at the end of the command represents the build context location. The build context includes all the files in the current directory and its subdirectories. These files are sent to the Docker daemon to be used during the build process.
+-f or --file . This flag is used to specify the location of the Dockerfile.
+
+    FROM ubuntu
+        FROM is the first instruction in every Dockerfile
+        FROM is used to specify the base image on top which all the other 
+            instruction will run in the same Dockerfile.
+        FROM <image_name>:<tag>
+
+    RUN 
+        Normal shell commands or the commands supported by the base image are executed using this instruction.
+        we can have n number of RUN in a single Dockerfile.
+        
+        Normal command format 
+            RUN <command>
+            
+        exec format 
+            RUN ['<command>','<param1>','<param2>']    
+            RUN ['apt','update']    
+            RUN ['apt','install','-y','git']    
+            RUN ['ls','-lrt']    
+    COPY and ADD 
+        Both copy and add instruction is used to copy files and directories from 
+        host machine build location to the image and the container created from it.
+    
+        ADD supports extra source formats 
+          - If the source is a compressed file then ADD will automatically uncompress it in the destination.
+          - If the source is a downloadable link then ADD will automatically download the file in the destination.
+        COPY <source_path_from_build_context> <destination_inside_image>      
+        ADD <source_path_from_build_context> <destination_inside_image>      
+
+    ENV 
+       This instruction is used to set the environment variable inside the container. 
+       Using this instruction we can create env variables at build time which means in the docker images.
+        ex:
+            
+           1. For individual variable     
+              ENV <variable_name> <value>
+                 (OR)
+              ENV <variable_name>=<value>
+
+           2. For multiple variables
+               ENV <variable_name1>=<value1> <variable_name2>=<value2> .....
+
+    To create environment variables at run time (means in containers)
+        1. With the docker run command 
+            docker run -e <variable_name>=<value> -e <variable_name>=<value>
+        2. With a list of variables in a file (.env file)
+            docker run --env-file <file_path> ...        
+
+    ARG 
+       using this instruction we can pass parameters to Dockerfile as user inputs.
+        
+        ex: ARG <arg_variable_name>=<value>
+
+        Note: <value> acts as default value to the arg_variable means if user does not set 
+              the arg value at build time this value will be used.
+
+        To pass the value at build time 
+            docker build --build-arg <arg_variable_name>=<user_value>
+
+   CMD vs ENTRYPOINT 
+        - Both CMD and ENTRYPOINT are used to define the default execution command of the container (the command 
+             which will be executed in the container as main process).
+        - If we use multiple CMD or ENTRYPOINT in the same Dockerfile only the last one will 
+          be considered.
+        - If we use both CMD and ENTRYPOINT in the same Dockerfile, then ENTRYPOINT gets the 
+              highest priority and the command defined using CMD will be as parameters to ENTRYPOINT.
+
+        Difference 
+           - CMD can be completely overridden at the runtime (with docker run at the end we can provide 
+                the command to override the CMD). 
+           - ENTRYPOINT can't be overridden at the runtime but the command passed at the runtime 
+             will become parameters to ENTRYPOINT command defined in Dockerfile.
+        
+        Syntax: we can define command in 2 ways 
+            1. shell format 
+                  CMD "ls -lrt"
+        
+            2. EXEC format 
+               - Always the first element is a command.
+               - Except the first element all the other elements are parameters to command.
+
+                  CMD ["ls","-lrt"]  
+
+    WORKDIR 
+        This is used to set the working directory for all the instructions that follow it.
+        such as RUN, CMD, ENTRYPOINT, COPY, ADD ....     
+           
+        ex: WORKDIR <path_in_container>
+
+- Docker volume 
+    Bind mount 
+
+    we mount a host location (file/directory) inside a container location    
+               docker -v <host_path>:<container_path>
+
+    The changes made in the host will retain in a container and also changes made inside the container in this location will retain in the host 
+    If the container is deleted host directory will not be deleted (data persistence).
+    It is not preferable to mount a single directory to multiple containers. (multiple containers processes may try to write the data to the same file which is not possible)
+Volumes 
+
+    They are docker-managed filesystems and we use docker commands to manage these volumes.
+Volumes are easier to manage, backup, and migrate than bind mounts.
+We can use different source filesystems called storage drivers (EBS, EFS, s3) 
+
+The default location of docker volume is /var/lib/docker/volumes/<volume_name>
+        To create a docker volume 
+                docker  volume create <volume_name>         
+
+        To delete volume 
+                docker volume rm <volume_name>
+
+        To mount a volume 
+                docker -v <volume_name>:<container_path>
+
+    Docker EFS mount
+
+    Mount AWS EFS docker volume to a container.
+          docker volume create \
+            --driver local \
+            --opt type=nfs \
+            --opt o=addr=fs-0b0e3aa3ba59955ac.efs.ap-south-1.amazonaws.com,rw,nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 \
+            --opt device=:/ efs 
+
+             To test create a file in the container 
+             while true; do echo "Dummy data" >> test.txt; done
+
+- Docker networking 
+    Publish 
+    Publish will bind the container application port to the host machine port so that 
+    we can access from the outside world with the host machine port.
+
+    Publish = port mapping of container to host machine + Expose 
+    
+    To publish a port         
+        docker run -p <host_port>:<container_port>
+    
+    To publish all the exposed ports 
+        docker run -P 
+        -P publish_all, It binds all the exposed ports of the container to the host machine. 
+    
+    To map a direct IP address to the host 
+        port to port 
+            docker run -p <ip>:<host_port>:<container_port>    
+        Any to port 
+            docker run -p <ip>:<container_port>    
+    
+    Range of ports 
+        many to many 
+            docker run -p 8080-8085:8086-8090
+            Note: The total number of host ports in the range should be the same as the container port range
+        many to one
+            docker run -p 8080-8090:8080
+            This will map to any one of the host ports which is free
+
+    Docker network types 
+    1. Bridge 
+        - This is a private internal network created by docker on the host machine 
+          by name docker0    
+        - This is the default network type for all the containers which are created 
+         without any network configurations.
+        - By default, all the containers in the same bridge can communicate with 
+          each other without any extra configuration.    
+        - We cannot use container name for communication only IP address is allowed in 
+          default bridge.
+
+        Custom bridge 
+            To create a bridge network 
+                docker network create --driver bridge my_bride 
+            
+            - In custom bridge containers can communicate with each other with container 
+              name and also with the IP address.
+    
+    Host           
+        - This driver removes the network isolation between the docker and the host.
+        - The containers are directly connected to the host machine network without  
+          the extra layer of any docker network.
+        - Shares the same TCP.IP stack and the same namespace as the host machine.  
+        - All the network interfaces which are there in the host machine are 
+          accessible by this container.
+
+        Network Namespace Sharing: The container shares the same network namespace as the host. It can directly access the network interfaces and services available on the host without any additional isolation.
+        
+        Port Binding: Ports exposed by the container are directly bound to the host's network interfaces. This means that services running within the container can be accessed on the same ports as if they were running on the host.
+        
+        Host's IP Address: The container uses the host's IP address, making it appear as if the container's services are running on the host itself.
+
+   None 
+        - Containers are not attached to any network by docker.
+        - All the required network configurations need to be done 
+          manually.
+        - The host or any other containers won't be able to communicate 
+          with this container until a custom network is configured.
+        USE CASE:
+        Running a container for debugging purposes where network access is not needed.
+        Creating a container for building or compiling code that doesn't require internet access.
+        Running a container that acts as a data volume container, where network communication is unnecessary.
+
+    Overlay 
+        - Overlay networks are meant to define network communication of containers hosted on different host machines. 
+        - To create such a network we use the ‘overlay’ driver. 
+        - The overlay driver is a native driver by docker that helps to create a single layer2 broadcast domain across containers 
+          hosted on multiple Docker host machines. 
