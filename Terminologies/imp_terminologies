@@ -1,0 +1,14 @@
+1. cgroups
+      cgroups and namespaces are powerful tools for managing resources and isolating processes in Linux systems.
+      cgroups, or control groups, are a Linux kernel feature that enables the management and limitation of system resources like CPU, memory, and network bandwidth, among others. We can use cgroups to set limits on these resources and distribute them among different groups of processes.
+
+2. namespaces
+      Namespaces, isolate various process elements, creating separate environments that prevent them from accessing or affecting other processes or the host system. Different types, such as mount, PID, and network, isolate different process aspects. In addition, they are often combined with cgroups to provide isolation and resource management for containers.
+      The key feature of namespaces is that they isolate processes from each other. On a server where you are running many different services, isolating each service and its associated processes from other services.
+
+3. environment
+      In computer operating systems, an environment is an area that contains information about the behaviour of programs and applications.        Linux environment variables are used by applications to get information about the environment, and each environment variable is a variable with a name and an associated value.
+  some examples of environment variables in Linux:
+      USER – This points to the currently logged-in user. 
+      HOME – This shows the home directory of the current user.
+      SHELL – This stores the path of the current user's shell, such as bash or zsh.
