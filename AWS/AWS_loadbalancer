@@ -41,14 +41,14 @@ OSI (Open System Interconnection) model consists of 7 layers
 3.Session Layer(Layer 5): This layer handles with session objects.
 
 4.Transport Layer(Layer 4): This is key layer,In this layer request splits into multiple packets or small chunks.
-      * This layer makes sure that the request comes from client to server in a secure way and in small packets.
+      * This layer makes sure that the request comes from client to server in a secure way and in the form of small packets.
 
 5.Network Layer(Layer 3): Small packets wants to travel from client to server through multiple routes.
 
 6.Data link Layer(Layer 2): The main function of this layer is to make sure data transfer is error-free from one node to another, over the physical layer.
   * The packet received from the Network layer is further divided into frames depending on the frame size of the NIC(Network Interface Card).
 
-7.Physical layer(Layer 1): In this layer all the cabels connected to the server.
+7.Physical layer(Layer 1): This layer containes cables.In this layer all the cabels connected to the server.
 
 
 * TLS : Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
