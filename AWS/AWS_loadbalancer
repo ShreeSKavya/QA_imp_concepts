@@ -1,6 +1,7 @@
 Q: what is Load-balancer in aws? why we use it?
 
 A: Load balancer is a service which uniformly distributes network traffic and workloads across multiple servers or cluster of servers.Load balancer in AWS increases the availability and fault tolerance of an application.
+    Load balancer coomonly uses round-robin technology.
     * Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. 
     * It monitors the health of its registered targets, and routes traffic only to the healthy targets. 
     * Elastic Load Balancing scales your load balancer as your incoming traffic changes over time.
