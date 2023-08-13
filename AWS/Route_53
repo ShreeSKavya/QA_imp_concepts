@@ -1,5 +1,5 @@
 what is Amazon Route 53:
-    - AWS Route 53 lets developers and organizations route end users to their web applications in a very reliable and cost-effective             manner. 
+    - AWS Route 53 makes the developers and organizations to route the end users to their web applications in a very reliable and cost-effective manner. 
     - It is a Domain Name System (DNS) that translates domain names into IP addresses to direct traffic to your website. 
     - In simple terms, it converts World Wide Web addresses like www.example.com to IP addresses like 10.20.30.40.
 
