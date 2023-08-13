@@ -31,6 +31,7 @@ Application Load balancer(ALB):
           * It offers High security compare to ALB and NLB
           * It sends highly encrypted packets to the VA.
 
+************************************  EXTRA CONTENT *******************************************
 
 The request goes to server from client side through 7 layers.and get the response from the server.
 OSI (Open System Interconnection) model consists of 7 layers
@@ -50,6 +51,7 @@ OSI (Open System Interconnection) model consists of 7 layers
 
 7.Physical layer(Layer 1): This layer containes cables.In this layer all the cabels connected to the server.
 
+************************************************************************************************************************
 
 * TLS : Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
 
