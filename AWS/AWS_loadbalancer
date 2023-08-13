@@ -1,7 +1,7 @@
 Q: what is Load-balancer in aws? why we use it?
 
 A: Load balancer is a service which uniformly distributes network traffic and workloads across multiple servers or cluster of servers.Load balancer in AWS increases the availability and fault tolerance of an application.
-    *Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. 
+    * Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. 
     * It monitors the health of its registered targets, and routes traffic only to the healthy targets. 
     * Elastic Load Balancing scales your load balancer as your incoming traffic changes over time.
     * To make an AWS ELB accept incoming traffic you have to configure them by specifying one or more listeners. A listener is a process which will check for connection requests.
@@ -32,12 +32,35 @@ Application Load balancer(ALB):
 
 
 The request goes to server from client side through 7 layers.and get the response from the server.
-OSI model consists of 7 layers
+OSI (Open System Interconnection) model consists of 7 layers
 1.Application Layer(Layer 7) : It is the one which is layer 7 in which what kind of protocol you used to access the server.
-2.Presentation Layer(Layer 6): In this layer TLS based requests send to the server.
+
+2.Presentation Layer(Layer 6): In this layer TLS (Transport Layer security) based requests send to the server.
+
 3.Session Layer(Layer 5): This layer handles with session objects.
+
 4.Transport Layer(Layer 4): This is key layer,In this layer request splits into multiple packets or small chunks.
       * This layer makes sure that the request comes from client to server in a secure way and in small packets.
+
 5.Network Layer(Layer 3): Small packets wants to travel from client to server through multiple routes.
-6.Data link(Layer 2): 
+
+6.Data link Layer(Layer 2): The main function of this layer is to make sure data transfer is error-free from one node to another, over the physical layer.
+  * The packet received from the Network layer is further divided into frames depending on the frame size of the NIC(Network Interface Card).
+
 7.Physical layer(Layer 1): In this layer all the cabels connected to the server.
+
+
+* TLS : Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
+
+* Transmission Control Protocol (TCP) : TCP is a transport-layer protocol. It provides a reliable virtual-circuit connection between applications.
+             a.Data is sent without errors or duplication and is received in the same order as it is sent.
+             b.TCP treats the data as a stream of bytes.
+
+* User Datagram Protocol (UDP) : UDP is also a transport-layer protocol and is an alternative to TCP.
+          a.It provides an unreliable datagram connection between applications. Data is transmitted link by link; there is no end-to-end connection.
+          b.The service provides no guarantees. Data can be lost or duplicated, and datagrams can arrive out of order.
+
+* Internet Protocol (IP) :
+         In terms of the OSI model, IP is a network-layer protocol. It provides a datagram service between applications, supporting both TCP and UDP.
+
+* protocol : A protocol is a set of rules and guidelines for communicating data. Rules are defined for each step and process during communication between two or more computers
