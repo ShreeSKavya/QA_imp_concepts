@@ -1,11 +1,30 @@
 Q: what is Load-balancer in aws? why we use it?
 
-A: Load balancer is a service which uniformly distributes network traffic and workloads across multiple servers or cluster of servers.Load balancer in AWS increases the availability and fault tolerance of an application.
-    Load balancer coomonly uses round-robin technology.
+A: Load balancer is a service which uniformly distributes network traffic and workloads across multiple servers or cluster of servers.
+    
+    A load balancer serves as the single point of contact for clients. Clients send requests to the load balancer, and the load balancer sends them to targets, such as EC2 instances, in one or more Availability Zones.
+
+        *To configure your load balancer, you create target groups, and then register targets with your target groups. 
+
+        *Your load balancer is most effective if you ensure that each enabled Availability Zone has at least one registered target. 
+
+        *You also create listeners to check for connection requests from clients and route requests from clients to the targets in your target groups.
+
     * Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. 
-    * It monitors the health of its registered targets, and routes traffic only to the healthy targets. 
+    * It monitors the health of its registered targets, and routes traffic only to the healthy targets.
+
+    * Load balancer coomonly uses round-robin technology.
+
     * Elastic Load Balancing scales your load balancer as your incoming traffic changes over time.
-    * To make an AWS ELB accept incoming traffic you have to configure them by specifying one or more listeners. A listener is a process which will check for connection requests.
+  
+    * Load balancer in AWS increases the availability and fault tolerance of an application.
+
+Target groups for your Network Load Balancers:
+      Each target group is used to route requests to one or more registered targets. When you create a listener, you specify a target group for its default action. 
+      Traffic is forwarded to the target group specified in the listener rule. You can create different target groups for different types of requests. For example, create one target group for general requests and other target groups for requests to the microservices for your application.
+
+Listeners for your Network Load Balancers
+      Before you start using your Network Load Balancer, you must add one or more listeners. A listener is a process that checks for connection requests, using the protocol and port that you configure. The rules that you define for a listener determine how the load balancer routes requests to the targets in one or more target groups.
 
 Q: what are the types of Load-balancer in aws? 
 
