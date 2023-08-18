@@ -137,4 +137,120 @@ Explain Amazon EBS and its types :
 		An EBS volume can only be attached to 1 ec2 instance at a time (Multi Attach EBS Volume can be attached to multiple instances). They are mounted to the file system.
 		You can backup the EBS volume into a snapshot, which can later be used/restored into a new EBS volume.
 
+***************************************************************************************************************************************************************************************************************
+
+***************************************************************************************************************************************************************************************************************
+LINUX:
+
+1.Why we use 
+  - ping : To check the connection b/w 2 networks
+
+  - telnet : It is used for authentication and authorization purpose.
+	     It is used to create the remote connection with the system over a TCP/IP network.
+	     To connect to the remote machine from the local machine, we should run telnet in the following pattern:
+
+			$ telnet -l [username] [remote machine IP] [port (optional)]
+
   
+  - To list all the open files : $ lsof
+  
+  - To check the port open or not 
+      List all busy ports in linux
+       1. sudo lsof -i -P -n | grep LISTEN
+       2. sudo netstat -tulpn | grep LISTEN
+            - To list all the listening ports : $ netstat -l (-l refers to listening)
+	 
+              The options used in this command have the following meaning:
+
+		-t - Show TCP ports.
+		-u - Show UDP ports.
+		-n - Show numerical addresses instead of resolving hosts.
+		-l - Show only listening ports.
+		-p - Show the PID and name of the listener’s process. This information is shown only if you run the command as root or sudo user.
+       
+   - To check a specific port open or not  
+   	sudo lsof -i:<port_number>
+	example: sudo lsof -i:8080
+
+  - To display the system performance information : $ Top
+
+  - nslookup : The nslookup command is a tool used to query Domain Name System (DNS) servers and retrieve information about a specific domain or IP address. 
+                                 (or)
+                It is used to resolve a domain name.
+
+* How to create new user to the remote machine?
+   	$ sudo useradd <user_name>
+
+* How to set new password to the new user?
+   	$ sudo passwd <user_name>
+
+* How to change the Owner of the file?
+	$ sudo chown <owner_name> <file_name>
+	
+ *****************************************************************************************************************
+ GIT:
+
+ * git --squash : to combine multiple commits into one.
+
+ * How to change the commit message? or How do I change the commit message after push?
+	git commit --amend -m "New message"
+	git push --force repository-name branch-name.
+
+ * How to check the difference between 2 commit IDs?
+	git diff <commit_ID_1> <commit_ID_2>
+
+ * Why we use .gitignore file?
+	
+
+*******************************************************************************************************************
+JENKINS:
+
+1.After build where to store our jenkins job ?
+	we store it in Artifactories like Jfrog
+
+2.How to secure jenkins job?
+	Step 1 − Click on Manage Jenkins and choose the 'Configure Global Security' option.
+	Step 2 − Click on Enable Security option. As an example, let's assume that we want Jenkins to maintain it's own database of users, so in the Security Realm, choose the option of 'Jenkins' own user database'.
+
+3.Process of jenkins => Jenkins
+   - process of Tomcat => Catelina
+   - process of Docker => Docker daemon
+
+4.What are the parameterized plugins?
+	
+
+*********************************************************************************************************************
+
+AWS:
+
+1.what is s3 replication?
+	It is used to copy the obejects between the buckets.
+
+2.What is edge location?
+	Edge Location is the Data Center used to deliver content fast to your users. It is the site that is near est your users.
+
+********************************************************************************************************************************
+DOCKER:
+
+1.How to list all the process inside the container?
+	docker top <Container_ID>
+
+2.Why we use docker compose?
+	Docker Compose is a tool that helps you define and share multi-container applications.
+
+3.what is system prune?
+
+4.what is container prune?
+
+5.what is image prune?
+
+6.what is dangling images?
+
+7.How to list all the dangling images?
+
+
+7.What is zombie process?
+	
+
+
+
