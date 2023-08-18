@@ -177,6 +177,7 @@ LINUX:
   - nslookup : The nslookup command is a tool used to query Domain Name System (DNS) servers and retrieve information about a specific domain or IP address. 
                                  (or)
                 It is used to resolve a domain name.
+   - tree command => It Displays directory paths and (optionally) files in each subdirectory. 
 
 * How to create new user to the remote machine?
    	$ sudo useradd <user_name>
@@ -188,6 +189,14 @@ LINUX:
 	$ sudo chown <owner_name> <file_name>
 
 * To list all the namespace => $ lsns
+
+* To check the system is active or not => uptime command is used
+	Uptime is defined as a command that returns how long a system has been running and statistics like current time, the number of active sessions of users, and load averages of the system
+
+* what is swap memory?
+	It is a part of actual memory , where data stored in ram can be temporarily moved when there is demand for more memory than your computer has available.
+
+*what is inode(index node) ?
 
 * Difference between .bashrc and .profile & .bash_profile 
 	.bashrc => The .bashrc file is a configuration file that is used to set up and customize the Bash shell, which is the default shell on most Linux and Unix-based operating systems. 
@@ -205,7 +214,7 @@ LINUX:
 
  * How to change the commit message? or How do I change the commit message after push?
 	git commit --amend -m "New message"
-	git push --force repository-name branch-name.
+	git push --force <repository-name> <branch-name>
 
  * How to check the difference between 2 commit IDs?
 	git diff <commit_ID_1> <commit_ID_2>
@@ -257,6 +266,11 @@ AWS:
 	A-name records => The A record maps a name to one or more IP addresses when the IP are known and stable.
 
 	C-name records => The C-NAME record maps a name to another name. It should only be used when there are no other records on that name.
+
+5.Difference between NACL and Security group?
+
+6.What is the least previlage permission in aws?
+	
 ********************************************************************************************************************************
 DOCKER:
 
@@ -298,6 +312,16 @@ DOCKER:
 11.What is docker registry?
 	A Docker registry is a storage and distribution system for named Docker images.
 
+12.Why we scanning the images in docker?
+	Container image security scanning is important because it is the primary way to find and fix vulnerabilities in container images before pushing the image to Docker Hub, ECR, GCR, Harbor or any other registries you may use.
+
 *****************************************************************************************************************************************************************
 Kubernetes:
+1.Difference between kubelet and kubectl?
 
+2.How to autoscale the pods using k8s cli?
+
+3.How to scale the pods using k8s cli?
+
+4.Port range for services => 30000 - 50000
+  Port range for nodeport => 30000 - 32767
