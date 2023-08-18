@@ -263,9 +263,9 @@ AWS:
 	apk => alpine
 
 4.What is A-name records,C-name records,Alias?
-	A-name records => The A record maps a name to one or more IP addresses when the IP are known and stable.
+	A-name records => These are the standard DNS records.The A record maps a domain name to one or more IP addresses when the IP are known and stable.
 
-	C-name records => The C-NAME record maps a name to another name. It should only be used when there are no other records on that name.
+	C-name records => These are the custom DNS records.The C-NAME record maps a domain name to another domain name. It should only be used when there are no other records on that name.
 
 5.Difference between NACL and Security group?
 
