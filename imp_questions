@@ -186,7 +186,18 @@ LINUX:
 
 * How to change the Owner of the file?
 	$ sudo chown <owner_name> <file_name>
-	
+
+* To list all the namespace => $ lsns
+
+* Difference between .bashrc and .profile & .bash_profile 
+	.bashrc => The .bashrc file is a configuration file that is used to set up and customize the Bash shell, which is the default shell on most Linux and Unix-based operating systems. 
+                   This file is typically located in the user's home directory and is executed every time a new terminal window is opened or a new Bash shell is started.
+
+	.profile => The .profile file is a configuration file that is used to set up and customize the shell environment when a user logs in to the system. 
+		    This file is typically located in the user's home directory and is executed only once when the user logs in to the system.
+
+	.bash_profile => The .bash_profile file is a configuration file that is used to set up and customize the Bash shell when a user logs in to the system. 
+			This file is typically located in the user's home directory and is executed only once when the user logs in to the system.
  *****************************************************************************************************************
  GIT:
 
@@ -200,8 +211,15 @@ LINUX:
 	git diff <commit_ID_1> <commit_ID_2>
 
  * Why we use .gitignore file?
-	
+ 	.gitignore is used to ignore some files or directories which you don't want to be tracked.(Git operations are not applied to that files or directories
+    which are added to .gitignore
 
+* What is branching stratergy?
+	 Branching means diverging from the mainline and continue to work separately without messing with the mainline.
+   It is used for parallel development of the project
+
+* How to initiate git repo?
+	git --init
 *******************************************************************************************************************
 JENKINS:
 
@@ -227,8 +245,18 @@ AWS:
 	It is used to copy the obejects between the buckets.
 
 2.What is edge location?
-	Edge Location is the Data Center used to deliver content fast to your users. It is the site that is near est your users.
+	Edge Location is the Data Center used to deliver content fast to your users. It is the site that is nearest your users.
 
+3.What is package manager?
+	It is a set of tools used to automate installing, upgrading, congigure the software
+	apt => ubuntu
+	yum => Red hat
+	apk => alpine
+
+4.What is A-name records,C-name records,Alias?
+	A-name records => The A record maps a name to one or more IP addresses when the IP are known and stable.
+
+	C-name records => The C-NAME record maps a name to another name. It should only be used when there are no other records on that name.
 ********************************************************************************************************************************
 DOCKER:
 
@@ -239,18 +267,37 @@ DOCKER:
 	Docker Compose is a tool that helps you define and share multi-container applications.
 
 3.what is system prune?
+	It is used to remove all unused objects like container,network,volume
 
 4.what is container prune?
+	It is used to remove all the stopped container
 
 5.what is image prune?
+	It is used to remove all unused images or dangling images
 
 6.what is dangling images?
+	It is untagged image which is not used by container
 
 7.How to list all the dangling images?
-
+	docker images -f dangling=True
 
 7.What is zombie process?
-	
+	It is the process which completes its excecution,but still has entry in its process table.paraent process still wait for its child process.	
 
+8.How to connect 2 networks which are present in different bridges?
+	docker network connect <custom_bridge_name><container_name>
+ 	where <container_name> is the name of the container which is present in default network.
 
+9.why we use docker commit?
+	If I want to create new image from the existing container.Then docker commit is used.
+	docker commit <existing_container_name> <new_image_name>:<Tag>
+
+10.What is docker hub?
+	Docker Hub is a collaboration tool and a marketplace for community developers, open source contributors, and independent software vendors (ISVs) to distribute their code publicly. 
+
+11.What is docker registry?
+	A Docker registry is a storage and distribution system for named Docker images.
+
+*****************************************************************************************************************************************************************
+Kubernetes:
 
