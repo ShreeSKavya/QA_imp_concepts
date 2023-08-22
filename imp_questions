@@ -198,6 +198,27 @@ LINUX:
 
 *what is inode(index node) ?
 
+* what is the default permission for the file in linux?
+	rw-rw-r(664)
+
+* what is the maximum permission for the file in linux?
+	rwx-rwx-rwx(777)
+
+* How to check current runing process in linux?
+	ps
+
+* How to check all the process which are running in backgroun?
+	ps -ef
+
+* How to stop the process gracefully?
+	By using systemctl stop <name_of_the_service>
+
+* How to check the size of the file which is more than 1 MB?
+	find . -size +1
+
+* How to check the size of the file which is less than 1 MB?
+	find . -size -1
+
 * Difference between .bashrc and .profile & .bash_profile 
 	.bashrc => The .bashrc file is a configuration file that is used to set up and customize the Bash shell, which is the default shell on most Linux and Unix-based operating systems. 
                    This file is typically located in the user's home directory and is executed every time a new terminal window is opened or a new Bash shell is started.
@@ -244,7 +265,16 @@ JENKINS:
    - process of Docker => Docker daemon
 
 4.What are the parameterized plugins?
-	
+
+5.why we use maven in jenkins?
+
+6.How do you automate CI/CD?
+
+7.What is quality profile?
+
+8.Why we use quality gateway in jenkins?
+
+9.what is gearman plugin in jenkins?
 
 *********************************************************************************************************************
 
@@ -270,7 +300,29 @@ AWS:
 5.Difference between NACL and Security group?
 
 6.What is the least previlage permission in aws?
-	
+
+7.what are the examples for RDS ?
+	Amazon Aurora.
+	PostgreSQL.
+	MySQL.
+	MariaDB.
+	Oracle Database.
+	Microsoft SQL Server
+
+8.How to secure EC2 instance ?
+	By using security groups 
+
+9.How to access private subnets?
+	By providing Nat gateway
+
+10.Which protocol is used in Application Load Balancer ?
+	HTTP/HTTPS protocol
+
+10.Which protocol is used in Network Load Balancer ?
+	TCP/SSL protocol
+
+10.Which protocol is used in Classic Load Balancer ?
+	HTTP/HTTPS and TCP/SSL protocol
 ********************************************************************************************************************************
 DOCKER:
 
@@ -314,14 +366,55 @@ DOCKER:
 
 12.Why we scanning the images in docker?
 	Container image security scanning is important because it is the primary way to find and fix vulnerabilities in container images before pushing the image to Docker Hub, ECR, GCR, Harbor or any other registries you may use.
+ For secure development we use scanning.
 
+13.Benefits of Docker?
+
+14.How to maintain microservices ?
+	By using Docker,we can maintain microservices.
+
+15.Difference between Running and Failed Container?
+	
+
+16.What is rolling out and rolling back ?
+	Upgrade: The ability to deploy latest major version and shut older version(s).
+
+	Rollout: The ability to deploy lates minor version (bugfix, hotfix, minor feature, enhancement) without downtime.
+
+	Rollback: The ability to restore back the older working version in case something goes wrong.
+
+17.Why we use rolling update?
+	
+
+18.Difference b/w rolling update and recreate ?
+	Rolling update:
+		*In this strategy, we do not drop all the already running instances.
+		*We drop instances by a certain percentage at a time and simultaneously spawn equal percentage of newer version pods.
+		*This upgrade is the default strategy in K8s.
+		*This has no downtime.
+
+	Recreate :
+		*Suppose there are 5 instances of your app running
+		*When deploying a new version, we can destroy the 5 instances of older version and then deploy 5 instances of newer version.
+		*The issue is there will be a downtime.
+		*This is majorly done during major changes, breaking changes or when backward compatibility is not possible.
+		*This is not the default strategy in K8s.
 *****************************************************************************************************************************************************************
 Kubernetes:
 1.Difference between kubelet and kubectl?
-
+	
 2.How to autoscale the pods using k8s cli?
+	kubectl autoscale deployment.v1.apps/nginx-deployment --min=5 --max=10 --cpu-percent=80
 
 3.How to scale the pods using k8s cli?
+	kubectl scale deployment.v1.apps/nginx-deployment --replicas=10
 
 4.Port range for services => 30000 - 50000
   Port range for nodeport => 30000 - 32767
+
+5.Why we use rolling update?
+
+6.Difference between rolling update and recreate ?
+
+7.What is size of the K8S cluster?
+	we required 1 master node and 2 worker node.
