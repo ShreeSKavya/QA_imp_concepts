@@ -275,7 +275,8 @@ JENKINS:
 8.Why we use quality gateway in jenkins?
 
 9.what is gearman plugin in jenkins?
-
+	The gearman plugin was designed to support extra slaves, allow load balancing of build jobs, and provide redundancy.
+    Jenkins core does not support multiple masters
 *********************************************************************************************************************
 
 AWS:
