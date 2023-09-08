@@ -1,6 +1,6 @@
-what is Amazon Route 53:
-    - AWS Route 53 makes the developers and organizations to route the end users to their web applications in a very reliable and cost-effective manner. 
-    - It is a Domain Name System (DNS) that translates domain names into IP addresses to direct the traffic to your website. 
+ what is Amazon Route 53:
+    - AWS Route 53 lets developers and organizations route end users to their web applications in a very reliable and cost-effective             manner. 
+    - It is a Domain Name System (DNS) that translates domain names into IP addresses to direct traffic to your website. 
     - In simple terms, it converts World Wide Web addresses like www.example.com to IP addresses like 10.20.30.40.
 
       Basically, domain queries are automatically routed to the nearest DNS server to provide the quickest response possible. If you use a web hosting company like GoDaddy, it takes 30 minutes to 24 hours to remap a domain to a different IP, but by using Route 53 in AWS it takes only a few minutes.
@@ -12,13 +12,13 @@ DNS or the Domain Name System:
     It translates human readable domain names (for example, www.amazon.com) to machine readable IP addresses (for example, 192.0.2.44).
 
 1. Register domain names
-     Your website needs a name, such as example.com. Route 53 will provide name for your website or web application, known as a domain name.It will register that domain name.so that end users can easily access web application by using domain name.
+     Your website needs a name, such as example.com. Route 53 lets you register a name for your website or web application, known as a domain name.
 
-2. Route the internet traffic to the resources for your domain
-     When a user opens a web browser and enters your domain name (example.com) or subdomain name (acme.example.com) in the address bar, Route 53 helps connect the browser with our website or web application.
+2. Route internet traffic to the resources for your domain
+     When a user opens a web browser and enters your domain name (example.com) or subdomain name (acme.example.com) in the address bar, Route 53 internally uses the DNS resolver to convert domain name into IP address,there by it help us to connect the browser with our website or web application.
 
 3. Check the health of your resources
-     Route 53 sends the automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functional. You also can choose to receive notifications when a resource becomes unavailable and choose to route internet traffic away from unhealthy resources.
+     Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functional. You also can choose to receive notifications when a resource becomes unavailable and choose to route internet traffic away from unhealthy resources.
 
 
 *******************************************Extra content**************************************
@@ -77,3 +77,24 @@ The DNS resolver also caches the IP address for example.com for an amount of tim
 8. The web browser sends a request for www.example.com to the IP address that it got from the DNS resolver. This is where your content is, for example, a web server running on an Amazon EC2 instance or an Amazon S3 bucket that's configured as a website endpoint.
 
 9. The web server or other resource at 192.0.2.44 returns the web page for www.example.com to the web browser, and the web browser displays the page.
+
+A hosted zone:
+      A hosted zone is a container for records, and records contain information about how you want to route traffic for a specific domain, such as example.com, and its subdomains (acme.example.com, zenith.example.com). A hosted zone and the corresponding domain have the same name. There are two types of hosted zones:
+
+     Public hosted zones contain records that specify how you want to route traffic on the internet. For more information, see Working with public hosted zones.
+
+     Private hosted zones contain records that specify how you want to route traffic in an Amazon VPC. For more information, see Working with private hosted zones.
+
+
+********************************VPN************************************
+VPN (Virtual Private Network)
+    VPN creates a private, encrypted tunnel through which a user's device can access the internet by hiding their personal information, location, and other data.
+
+VPC Endpoints: 
+     Enables private connectivity to services hosted in AWS, from within your VPC without using an Internet Gateway, VPN, Network Address Translation (NAT) devices, or firewall proxies.
+
+A VPC peering connection
+     is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. The VPCs can be in different Regions (also known as an inter-Region VPC peering connection).
+
+
+
