@@ -25,7 +25,7 @@ Target groups for your Network Load Balancers:
 
 Listeners for your Network Load Balancers
       Before you start using your Network Load Balancer, you must add one or more listeners. A listener is a process that checks for connection requests, using the protocol and port that you configure. The rules that you define for a listener determine how the load balancer routes requests to the targets in one or more target groups.
-
+________________________________________________________________________________________________________________________________________________________
 Q: what are the types of Load-balancer in aws? 
 
 A: we have Three types of load balancers 
