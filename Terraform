@@ -1,0 +1,39 @@
+Q: what is state file in terraform?
+A: Terraform stores information about your infrastructure in a state file. This state file keeps track of resources created by your configuration and maps them to real-world resources.
+
+Q: Explain Terraform file Architecture?
+A: we have *Provider.tf
+           * Main.tf
+           *variables.tf and * tf.vars files
+    a.provider.tf: It is the file where all the provider related configurations are kept in this file.where provider is a API to interact with public cloud.
+                   In our company AWS is the provider which we are using.
+                    provider "aws" {
+                      access_key = ""
+                      secret_key = ""
+                      region = ""
+                    }
+                -If we wont configure access_key and secret_key key in provider block then terraform 
+                  will try to fetch the keys from aws_cli that is using the below environment variables.
+                        1. AWS_ACCESS_KEY_ID
+                        2. AWS_SECRET_ACCESS_KEY
+                - we need to create env variables by using 
+                    $ export AWS_ACCESS_KEY_ID
+                    $ export AWS_SECRET_ACCESS_KEY
+                    $ export AWS_DEFAULT_REGION
+                - If env variables are not there in aws cli.Then it will look for access_key and secret_key in Aws config file which is present in the home directory i.e., .aws
+                - If it could not find the access_key and secret_key in that config file also.Then it will throws an error.
+    b.Main.tf: 
+      - This is our main configuration file where all the configuration related to the resources which we want to create are defined in this file.
+      - we need to define the configurations in resource block
+      - resource "<resource_type>" "<resource_name>" {
+                provider = aws.region1
+            }
+            
+            resource "aws_instance" "my_instance" {
+                provider = aws.region2
+                ami = ""
+                instance_type = "t2.micro"
+            }
+    - Example: aws - ec2 instance -> aws_instance
+                 - s3 bucket    -> aws_s3_bucket 
+                 - vpc          -> aws_vpc    
